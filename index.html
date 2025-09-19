@@ -2,16 +2,40 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mis Proyectos</title>
+  <title>Acceso secreto</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background: #f5f5f5;
+    }
+    #puzzle {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 5px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Bienvenido a mis proyectos</h1>
-  <p>Haz clic en el botón para ver mi trabajo en Canva:</p>
+  <h1>🔒 Acceso restringido</h1>
+  <p id="puzzle">Adivina la contraseña: "¿Qué número resulta de 5 + 7?"</p>
+  <input type="text" id="respuesta" placeholder="Escribe tu respuesta">
+  <button onclick="verificar()">Entrar</button>
 
-  <a href="https://www.canva.com/design/DAGzQMthOaY/hMp1M3-5JyuUWQlTd4L4Aw/edit?utm_content=DAGzQMthOaY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" 
-
-     Ver proyecto en Canva
-  </a>
+  <script>
+    function verificar() {
+      let r = document.getElementById("respuesta").value;
+      if (r === "12") {
+        window.location.href = "https://www.canva.com/design/DAGzQMthOaY/hMp1M3-5JyuUWQlTd4L4Aw/edit?utm_content=DAGzQMthOaY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton";
+      } else {
+        alert("❌ Respuesta incorrecta, intenta otra vez.");
+      }
+    }
+  </script>
 </body>
 </html>
-
