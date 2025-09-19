@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Acceso restringido</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background: #111;
+      color: #fff;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
+      background-color: #0078D7;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005A9E;
+    }
+  </style>
+</head>
+<body>
+  <h2>Acceso restringido 🔒</h2>
+  <p>Responde la siguiente pregunta para entrar:</p>
+  <p><b>¿Cómo se llama mi profesor de CyT?</b></p>
+  <input type="text" id="respuesta" placeholder="Escribe tu respuesta...">
+  <br>
+  <button onclick="verificar()">Entrar</button>
+
+  <script>
+    function verificar() {
+      const respuesta = document.getElementById("respuesta").value.trim().toLowerCase();
+      if (respuesta === "gloria") { 
+        window.location.href = "https://www.canva.com/design/DAGzQMthOaY/hMp1M3-5JyuUWQlTd4L4Aw/edit";
+      } else {
+        alert("Respuesta incorrecta ❌. Intenta de nuevo.");
+      }
+    }
+  </script>
+</body>
+</html>
