@@ -2,38 +2,52 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Acceso secreto</title>
+  <title>Acceso restringido</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
       margin-top: 100px;
-      background: #f5f5f5;
+      background: #111;
+      color: #fff;
     }
-    #puzzle {
-      font-size: 18px;
-      margin-bottom: 15px;
-    }
-    input, button {
+    input {
       padding: 10px;
       font-size: 16px;
-      margin: 5px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
+      background-color: #0078D7;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005A9E;
     }
   </style>
 </head>
 <body>
-  <h1>🔒 Acceso restringido</h1>
-  <p id="puzzle">Adivina la contraseña: "¿Qué número resulta de 5 + 7?"</p>
-  <input type="text" id="respuesta" placeholder="Escribe tu respuesta">
+  <h2>Acceso restringido 🔒</h2>
+  <p>Responde la siguiente pregunta para entrar:</p>
+  <p><b>¿3s3n3lv1nl4c4g4d4?</b></p>
+  <input type="text" id="respuesta" placeholder="Escribe tu respuesta...">
+  <br>
   <button onclick="verificar()">Entrar</button>
 
   <script>
     function verificar() {
-      let r = document.getElementById("respuesta").value;
-      if (r === "12") {
-        window.location.href = "https://www.canva.com/design/DAGzQMthOaY/hMp1M3-5JyuUWQlTd4L4Aw/edit?utm_content=DAGzQMthOaY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton";
+      const respuesta = document.getElementById("respuesta").value.trim().toLowerCase();
+      if (respuesta === "hogrider") { 
+        window.location.href = "https://www.canva.com/design/DAGzQMthOaY/hMp1M3-5JyuUWQlTd4L4Aw/edit";
       } else {
-        alert("❌ Respuesta incorrecta, intenta otra vez.");
+        alert("Respuesta incorrecta ❌. Intenta de nuevo.");
       }
     }
   </script>
